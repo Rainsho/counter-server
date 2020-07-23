@@ -1,0 +1,12 @@
+{
+  "name": "count-server",
+  "version": "1.0.0",
+  "description": "Just do the count.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Rainsho",
+  "license": "MIT"
+}
