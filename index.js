@@ -24,10 +24,11 @@ process.on('SIGINT', () => {
 
 http
   .createServer((req, res) => {
-    const { url, socket } = req;
-    const { remoteAddress, localPort } = socket;
+    const { url, socket, headers } = req;
+    const { remoteAddress } = socket;
+    const realIp = headers['x-real-ip']; // added by nginx
 
-    console.log(new Date(), remoteAddress, localPort, url);
+    console.log(new Date(), realIp || remoteAddress, url);
 
     switch (url) {
       case '/counter':
