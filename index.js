@@ -26,7 +26,7 @@ http
   .createServer((req, res) => {
     const { url, socket, headers } = req;
     const { remoteAddress } = socket;
-    const realIp = headers['x-real-ip']; // added by nginx
+    const realIp = headers['x-forwarded-for']; // added by nginx
 
     console.log(new Date(), realIp || remoteAddress, url);
 
